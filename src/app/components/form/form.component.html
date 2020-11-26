@@ -1,0 +1,47 @@
+<form class="needs-validation" novalidate (ngSubmit)="save(forma); forma.reset()" #forma="ngForm">
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label>Nombre:</label>
+            <input type="text" name="name" class="form-control is-invalid" placeholder="Ingrese su nombre..." ngModel [class.is-invalid]="name.invalid && name.touched" #name="ngModel" required>
+            <small class="form-text text-danger" *ngIf="name.invalid && name.touched">
+                Por favor ingrese su nombre completo
+            </small>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label>CI:</label>
+            <input type="number" name="ci" class="form-control is-invalid" placeholder="Ingrese su CI..." ngModel [class.is-invalid]="ci.invalid && ci.touched" #ci="ngModel" required>
+            <small class="form-text text-danger" *ngIf="ci.invalid && ci.touched">
+                Por favor ingrese su CI
+            </small>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label>Direccion</label>
+            <input type="text" name="direccion" class="form-control is-invalid" placeholder="Ingrese su direccion..." ngModel [class.is-invalid]="direccion.invalid && direccion.touched" #direccion="ngModel" required>
+            <small class="form-text text-danger" *ngIf="direccion.invalid && direccion.touched">
+                Por favor ingrese su direccion completa
+            </small>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label>Telefono:</label>
+            <input type="number" name="telefono" class="form-control is-invalid" placeholder="Ingrese su telefono..." ngModel [class.is-invalid]="telefono.invalid && telefono.touched" #telefono="ngModel" required>
+            <small class="form-text text-danger" *ngIf="telefono.invalid && telefono.touched">
+                Por favor ingrese su numero de telefono
+            </small>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-3 mb-3">
+            <label>Cantidad</label>
+            <select class="custom-select" type="number" name="products" ngModel #products="ngModel" [class.is-invalid]="products.invalid && products.touched" required>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+</form>
